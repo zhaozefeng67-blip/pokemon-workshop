@@ -52,7 +52,7 @@ def fig_bst_by_type(full_stats: pd.DataFrame, selected_types: list[str]) -> go.F
         labels={"average_bst": "Average BST", "type": "Type"},
         title="Average Base Stat Total by Type",
     )
-    fig.update_traces(text=plot_df["average_bst"].round(1), textposition="outside", showlegend=False)
+    fig.update_traces(showlegend=False)
     return clean_plotly_layout(fig, height=CHART_HEIGHT_HALF)
 
 
