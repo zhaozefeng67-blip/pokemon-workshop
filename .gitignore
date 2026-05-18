@@ -26,3 +26,6 @@ Thumbs.db
 # Env / secrets
 .env
 .env.*
+
+# Optional: commit artifacts/ml_results_30.pkl if you want zero train step on clone
+# artifacts/
