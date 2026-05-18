@@ -3,15 +3,30 @@ import streamlit as st
 
 APP_CSS = """
     <style>
+    /* Do not hide stHeader: the sidebar open/close control lives there when collapsed. */
     header[data-testid="stHeader"] {
-        display: none;
-        height: 0;
+        background: transparent;
     }
+
     #MainMenu {
         visibility: hidden;
     }
     footer {
         visibility: hidden;
+    }
+
+    [data-testid="stSidebarCollapsedControl"],
+    [data-testid="stSidebarCollapseButton"] {
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999999;
+    }
+
+    [data-testid="stSidebarHeader"] {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: var(--secondary-background-color);
     }
 
     .stApp {
